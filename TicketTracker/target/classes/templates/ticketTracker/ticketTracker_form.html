@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>ticketTracker_form</title>
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<h3>CreateTicketTracker</h3>
+		<hr>
+		
+	
+		<form action="#" th:action="@{/ticketTracker/save}"
+						 th:object="${ticketTracker}" method="POST">
+		
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+			
+			<h6>Ticket Title</h6>
+			<input type="text" th:field="*{ticket_title}"
+					class="form-control mb-4 col-4" placeholder="Ticket Title">
+
+            <h6>Some Description</h6>
+			<input type="text" th:field="*{ticket_description}"
+					class="form-control mb-4 col-4" placeholder="Ticket Description">
+            
+            <h6>Content</h6>
+			<input type="text" th:field="*{ticket_created_on}"
+					class="form-control mb-4 col-4" placeholder="Ticket Content">
+				
+			<button type="submit" class="btn btn-info col-2">Create</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/ticketTracker/list}">Back to Ticket List</a>
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
